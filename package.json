@@ -1,0 +1,13 @@
+{
+  "name": "pwa-push-demo",
+  "version": "1.0.0",
+  "description": "Ejemplo sencillo de notificaciones push en una PWA (Service Worker + Push API + VAPID + web-push)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "web-push": "^3.6.7"
+  }
+}

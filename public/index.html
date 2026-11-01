@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PWA Push Demo</title>
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#2563eb" />
+  <link rel="apple-touch-icon" href="/icon-192.png" />
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: system-ui, sans-serif; max-width: 520px; margin: 0 auto; padding: 24px 16px; line-height: 1.5; }
+    h1 { font-size: 1.4rem; margin-bottom: 4px; }
+    .card { border: 1px solid #8884; border-radius: 12px; padding: 16px; margin: 16px 0; }
+    .row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+    input { width: 100%; padding: 8px; border-radius: 8px; border: 1px solid #8886; margin-top: 6px; box-sizing: border-box; font: inherit; }
+    button { padding: 8px 14px; border-radius: 8px; border: 0; background: #2563eb; color: #fff; font: inherit; cursor: pointer; }
+    button:disabled { opacity: .4; cursor: not-allowed; }
+    button.secondary { background: #64748b; }
+    ul { padding-left: 18px; font-size: .9rem; }
+    small { opacity: .7; }
+  </style>
+</head>
+<body>
+  <h1>🔔 PWA Push Demo</h1>
+  <small>Estado: <b id="state">…</b> · Permiso: <b id="perm">…</b></small>
+
+  <div class="card">
+    <b>1. Suscripción</b>
+    <div class="row">
+      <button id="subscribe">Activar notificaciones</button>
+      <button id="unsubscribe" class="secondary">Desactivar</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <b>2. Enviar notificación de prueba</b>
+    <input id="title" placeholder="Título" value="¡Hola! 👋" />
+    <input id="body" placeholder="Mensaje" value="Esta es una notificación push desde tu servidor." />
+    <div class="row"><button id="send">Enviar</button></div>
+    <small>Tip: cierra la pestaña y vuelve a enviar desde otra ventana o con curl para ver que llega en segundo plano.</small>
+  </div>
+
+  <div class="card">
+    <b>Registro</b>
+    <ul id="log"></ul>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
